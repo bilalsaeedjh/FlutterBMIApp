@@ -88,7 +88,7 @@ class BmiState extends State<Bmi> {
         child: Stack(
           children:<Widget>[
                 Opacity(
-                  opacity: 0.3,
+                  opacity: 0.1,
                   child: Center(
                   child: new Image.asset(
                     'images/wall.jpg',
