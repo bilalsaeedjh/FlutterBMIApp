@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Bmi extends StatefulWidget {
   @override
@@ -171,7 +174,35 @@ class BmiState extends State<Bmi> {
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.italic,
                       fontSize: 19.9
-                  ),)
+                  ),),
+                SizedBox(height: 10,),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: _textAnimationKit[1],
+                ),
+                Center(
+                  child: _textAnimationKit[0],
+                ),
+
+                //Adding buttons to navigate towards youtube and gitHub
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    IconButton(
+                      icon: FaIcon(FontAwesomeIcons.github),
+                      tooltip: 'Go to  our gitHub profile',
+                      onPressed: () => launch('https://github.com/bilalsaeedjh'),
+                    ),
+                    SizedBox(width: 30,),
+                    IconButton(
+                      icon: FaIcon(FontAwesomeIcons.youtube),
+                      tooltip: 'Go to  our Youtube profile',
+                      onPressed: () => launch('https://www.youtube.com/channel/UCZSgQGG74K2yuEDnbG4U1tQ?view_as=subscriber'),
+                    ),
+
+                  ],
+                )
+
 
               ],
 
@@ -182,4 +213,47 @@ class BmiState extends State<Bmi> {
       ),
     );
   }
+
+  //Animation for the Text
+  List<Widget> _textAnimationKit=[
+    TyperAnimatedTextKit(
+      onTap: () {
+        print("Tap Event");
+      },
+      text: [
+        "See our other Flutter Examples on:,",
+        "Github,",
+        "Youtube",
+        "- SkillzUPP Technologies",
+      ],
+      textStyle: TextStyle(fontSize: 20.0, fontFamily: "Bobbers"),
+
+      pause: Duration(seconds:  3),
+      // speed: Duration(milliseconds:  1000),
+    ),Align(
+      alignment: Alignment.bottomRight,
+      child: TextLiquidFill(
+        text: 'SkillzUPP Technologies',
+        waveColor: Colors.blue,
+        waveDuration: Duration(milliseconds:700),
+        loadDuration: Duration(seconds:20),
+        boxBackgroundColor: Colors.white,
+        textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        boxHeight: 100,
+      ),
+    ), SizedBox(
+      width: 250.0,
+      child: TypewriterAnimatedTextKit(
+        onTap: () {
+          print("Tap Event");
+        },
+        text: [
+          "Discipline is the best tool",
+          "Design first, then code",
+          "Do not patch bugs out, rewrite them",
+          "Do not test bugs out, design them out",
+        ],
+        textStyle: TextStyle(fontSize: 30.0, fontFamily: "Agne"),
+      ),
+    ),];
 }
