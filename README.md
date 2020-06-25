@@ -8,4 +8,4 @@ Unique Standerized formula is used to calculate the BMI (Body Mass Index).
 ***https://github.com/bilalsaeedjh/FlutterBasicApps/issues/1#issue-645240977***
 
 Find the tutorial on [Youtube](https://www.youtube.com/channel/UCZSgQGG74K2yuEDnbG4U1tQ?view_as=subscriber)
-![alt text](https://github.com/bilalsaeedjh/FlutterBMIApp/blob/master/images/image.png?raw=true)
+![alt text](https://github.com/bilalsaeedjh/FlutterBMIApp/blob/master/images/bmi.png?raw=true)
