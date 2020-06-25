@@ -27,7 +27,6 @@ Unique Standerized formula is used to calculate the BMI (Body Mass Index).####
   
   > Using AwesomeFonts package in Flutter
   
-![alt text](https://image.freepik.com/free-vector/man-body-mass-index-fitness-bmi-chart-with-male-silhouettes-scale_53562-7067.jpg/to/img.png)
   
 Find the tutorial on [Youtube](https://www.youtube.com/channel/UCZSgQGG74K2yuEDnbG4U1tQ?view_as=subscriber)
 
