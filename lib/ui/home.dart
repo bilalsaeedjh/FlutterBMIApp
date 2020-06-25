@@ -80,139 +80,211 @@ class BmiState extends State<Bmi> {
       appBar: new AppBar(
         title: new Text('BMI (Body Mass Index)'),
         centerTitle: true,
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.lightBlueAccent,
       ),
       backgroundColor: Colors.white,
       body: new Container(
         alignment: Alignment.topCenter,
-        child: new ListView(
-          padding: const EdgeInsets.all(2.0),
-          children: <Widget>[
-            new Image.asset(
-              'images/bmi.png',
-              height: 100.0,
-              width: 100.0,
-            ),
-            new Container(
-              margin: const EdgeInsets.all(3.0),
-              height: 260.0,
-              width: 290.0,
-              //color: Colors.grey.shade300,
-              child: Stack(
-                children: <Widget>[
-                  Center(
-                    child: Opacity(
-
-                      opacity: 0.3,
-                      child: Image.asset('images/bmi.png',
-                      height: 258.0,
-                      width: 288.0,),
-                    ),
+        child: Stack(
+          children:<Widget>[
+                Opacity(
+                  opacity: 0.3,
+                  child: Center(
+                  child: new Image.asset(
+                    'images/wall.jpg',
+                    width: 1000.0,
+                    height: 1200.0,
+                    fit: BoxFit.fill,
                   ),
-                  new Column(
-                    children: <Widget>[
-                      new TextField(
-                        controller: _ageController,
-                        keyboardType: TextInputType.number,
-                        decoration: new InputDecoration(
-                            labelText: 'Age',
-                            hintText: 'e.g: 34',
-                            icon: new Icon(Icons.person_outline)),
-                      ),
-
-                      new TextField(
-                          controller: _heightController,
-                          keyboardType: TextInputType.number,
-                          decoration: new InputDecoration(
-                              labelText: 'Height in feet',
-                              hintText: 'e.g 6.5',
-                              icon: new Icon(Icons.insert_chart))),
-                      new TextField(
-                          controller: _weightController,
-                          keyboardType: TextInputType.number,
-                          decoration: new InputDecoration(
-                              labelText: 'Weight in lbs',
-                              hintText: 'e.g 180',
-                              icon: new Icon(Icons.line_weight))),
-
-                      new Padding(padding: new EdgeInsets.all(12)),
-
-                      //calculate button
-                      new Container(
-                        alignment: Alignment.center,
-                        child: new RaisedButton(
-                          onPressed: _calculateBMI,
-                          color: Colors.pinkAccent,
-                          child: new Text('Calculate BMI'),
-                          textColor: Colors.white,
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-
-
-
-              ),
-            ),
-            new Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+             ),
+                ),
+            ListView(
+              padding: const EdgeInsets.all(2.0),
               children: <Widget>[
-                new Text("$_finalResult ",
-                  style: new TextStyle(
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.italic,
-                      fontSize: 19.9
-                  ),),
-
-                new Padding(padding: const EdgeInsets.all(5.0)),
-
-                new Text("$_resultReading ",
-                  style: new TextStyle(
-                      color: Colors.pinkAccent,
-                      fontWeight: FontWeight.w500,
-                      fontStyle: FontStyle.italic,
-                      fontSize: 19.9
-                  ),),
-                SizedBox(height: 10,),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: _textAnimationKit[1],
+                new Image.asset(
+                  'images/bmi.png',
+                  height: 100.0,
+                  width: 100.0,
                 ),
-                Center(
-                  child: _textAnimationKit[0],
-                ),
+                new Container(
+                  margin: const EdgeInsets.all(3.0),
+                  height: 260.0,
+                  width: 290.0,
+                  //color: Colors.grey.shade300,
+                  child: Stack(
+                    children: <Widget>[
+                      Center(
+                        child: Opacity(
 
-                //Adding buttons to navigate towards youtube and gitHub
-                Row(
+                          opacity: 0.3,
+                          child: Image.asset('images/bmi.png',
+                            height: 258.0,
+                            width: 288.0,),
+                        ),
+                      ),
+                      new Column(
+                        children: <Widget>[
+                          new TextField(
+                            controller: _ageController,
+                            keyboardType: TextInputType.number,
+                            decoration: new InputDecoration(
+                                labelText: 'Age',
+                                hintText: 'e.g: 34',
+                                icon: new Icon(Icons.person_outline)),
+                          ),
+
+                          new TextField(
+                              controller: _heightController,
+                              keyboardType: TextInputType.number,
+                              decoration: new InputDecoration(
+                                  labelText: 'Height in feet',
+                                  hintText: 'e.g 6.5',
+                                  icon: new Icon(Icons.insert_chart))),
+                          new TextField(
+                              controller: _weightController,
+                              keyboardType: TextInputType.number,
+                              decoration: new InputDecoration(
+                                  labelText: 'Weight in lbs',
+                                  hintText: 'e.g 180',
+                                  icon: new Icon(Icons.line_weight))),
+
+                          new Padding(padding: new EdgeInsets.all(12)),
+
+                          //calculate button
+                          new Container(
+                            alignment: Alignment.center,
+                            child: new RaisedButton(
+                              onPressed: _calculateBMI,
+                              color: Colors.lightBlue,
+                              child: new Text('Calculate BMI',style: TextStyle(fontSize: 18),),
+                              textColor: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+
+
+
+                  ),
+                ),
+                new Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    IconButton(
-                      icon: FaIcon(FontAwesomeIcons.github),
-                      tooltip: 'Go to  our gitHub profile',
-                      onPressed: () => launch('https://github.com/bilalsaeedjh'),
+                    new Text("$_finalResult ",
+                      style: new TextStyle(
+                          color: Colors.blueAccent,
+                          fontWeight: FontWeight.w500,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 19.9
+                      ),),
+
+                    new Padding(padding: const EdgeInsets.all(5.0)),
+
+                    new Text("$_resultReading ",
+                      style: new TextStyle(
+                          color: Colors.pinkAccent,
+                          fontWeight: FontWeight.w500,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 19.9
+                      ),),
+                    SizedBox(height: 10,),
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: _textAnimationKit[1],
                     ),
-                    SizedBox(width: 30,),
-                    IconButton(
-                      icon: FaIcon(FontAwesomeIcons.youtube),
-                      tooltip: 'Go to  our Youtube profile',
-                      onPressed: () => launch('https://www.youtube.com/channel/UCZSgQGG74K2yuEDnbG4U1tQ?view_as=subscriber'),
+                    Center(
+                      child: _textAnimationKit[0],
                     ),
+
+                    //Adding buttons to navigate towards youtube and gitHub
+                    /* Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+
+                      Column(
+                        children: <Widget>[
+                          IconButton(
+                          icon: FaIcon(FontAwesomeIcons.github),
+                          tooltip: 'Go to  our gitHub profile',
+                          onPressed: () => launch('https://github.com/bilalsaeedjh'),
+                        ),
+                          Text(
+                            "Github",
+                            style: TextStyle(color:Colors.black54,fontWeight:FontWeight.bold,fontSize: 14) ,
+                          )
+                        ]
+                      ),
+                      SizedBox(width: 30,),
+                      Column(
+                        children: <Widget>[
+                          IconButton(
+                            icon: FaIcon(FontAwesomeIcons.youtube),
+                            tooltip: 'Go to  our Youtube profile',
+                            onPressed: () => launch('https://www.youtube.com/channel/UCZSgQGG74K2yuEDnbG4U1tQ?view_as=subscriber'),
+                          ),
+                          Text(
+                            "Youtube",
+                            style: TextStyle(color:Colors.black54,fontWeight:FontWeight.bold,fontSize: 14) ,
+                          )
+                        ]
+                      ),
+
+                    ],
+                  )*/
+
 
                   ],
-                )
 
 
+                ),
               ],
-
 
             ),
           ],
         ),
+
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.github),
+            title: Text('Github'),
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.youtube),
+            title: Text('Youtube'),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
+
+
     );
   }
+
+  //Code for BottomNavigation Purpose
+  int _selectedIndex = 0;
+
+
+  void _onItemTapped(int index) {
+    setState(() {
+      if(index==0){
+        launch('https://github.com/bilalsaeedjh');
+        _selectedIndex = index;
+      }
+      if(index==1){
+        launch('https://www.youtube.com/channel/UCZSgQGG74K2yuEDnbG4U1tQ?view_as=subscriber');
+        _selectedIndex = index;
+      }
+
+    });
+
+  }
+  //NavigationBar work ends here
+
 
   //Animation for the Text
   List<Widget> _textAnimationKit=[
@@ -221,12 +293,13 @@ class BmiState extends State<Bmi> {
         print("Tap Event");
       },
       text: [
-        "See our other Flutter Examples on:,",
+        "See our other Flutter Examples on:",
         "Github,",
         "Youtube",
         "- SkillzUPP Technologies",
       ],
-      textStyle: TextStyle(fontSize: 20.0, fontFamily: "Bobbers"),
+      textStyle: TextStyle(fontSize: 20.0, fontFamily: "Bobbers",color:Colors.black),
+
 
       pause: Duration(seconds:  3),
       // speed: Duration(milliseconds:  1000),
@@ -239,7 +312,7 @@ class BmiState extends State<Bmi> {
         loadDuration: Duration(seconds:20),
         boxBackgroundColor: Colors.white,
         textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        boxHeight: 100,
+        boxHeight: 30,
       ),
     ), SizedBox(
       width: 250.0,
